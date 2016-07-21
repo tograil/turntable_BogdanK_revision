@@ -1,25 +1,29 @@
 var app = angular.module('tt', []);
 
-app.value('imagePath', 'app/assets/');
+app.value('imagePath', 'app/img/');
 
 app.value('images', {
-    background: 'background.jpg',
-    machine: 'turntable-base.png',
-    disk: 'disc.png',
-    control: 'music-control.png',
-    playOn: 'btn-play-on.png',
-    playOff: 'btn-play-off.png',
-    powerOn: 'btn-power-on.png',
+    background: 'base.png',
+    disk: 'plastinka.png',
+    control: 'igla.png',
+    playOn: 'start_on.png',
+    playOff: 'start.png',
+    speed33On: 'bttn_33_on.png',
+    speed33Off: 'bttn_33.png',
+    speed45On: 'bttn_45_on.png',
+    speed45Off: 'bttn_45.png',
+    speedSlider: 'slider_base.png',
+    speedSliderButton: 'slider.png',
+    blueButtonOn: 'blue.png',
+    blueButtonOff: '',
+    redButtonOn: 'red.png',
+    redButtonOff: ''
+
+    /*powerOn: 'btn-power-on.png',
     powerOff: 'btn-power-off.png',
-    speed33On: 'btn-33-on.png',
-    speed33Off: 'btn-33-off.png',
-    speed45On: 'btn-45-on.png',
-    speed45Off: 'btn-45-off.png',
-    speedSlider: 'speed-control.png',
-    speedSliderButton: 'speed-control-btn.png',
     soundWave: 'sound-wave.png',
     soundWaveControl: 'sound-wave-controll.png',
-    soundWaveControlBtn: 'sound-wave-control-btn.png'
+    soundWaveControlBtn: 'sound-wave-control-btn.png'*/
 });
 
 app.factory('loadedImages', ['$q', 'imagePath', 'images', function ($q, imagePath, images) {
