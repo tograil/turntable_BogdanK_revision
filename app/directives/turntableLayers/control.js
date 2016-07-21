@@ -34,9 +34,9 @@ function addControlLayer(stage, layer, params) {
         if(pos <= 0)
             animTwo.stop();
     }, layer);
-    
+
     stage.add(controlGroup);
-    
+
     function controlStart() {
         rollStarted = true;
         animOne.start();

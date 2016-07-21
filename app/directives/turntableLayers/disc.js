@@ -2,14 +2,16 @@ function addDiscLayer(stage, layer, image) {
     var group = new Konva.Group();
 
     var disc = new Konva.Image({
-        x:227,
-        y:185,
+        x: 227,
+        y: 185,
+
         image: image,
-        width: 311,
-        height: 311,
+        width: 511,
+        height: 511,
+
         offset: {
-            x: 155,
-            y: 155
+            x: 250,
+            y: 190
         }
     });
 

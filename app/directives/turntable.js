@@ -21,7 +21,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 y: 50
             });
 
-            addMachineLayer(turntableGroup, images.machine);
+            /*addMachineLayer(turntableGroup, images.machine);*/
             var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk);
 
             var control = addControlLayer(turntableGroup, turntableLayer, {

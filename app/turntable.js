@@ -3,6 +3,7 @@ var app = angular.module('tt', []);
 app.value('imagePath', 'app/img/');
 
 app.value('images', {
+
     background: 'base.png',
     disk: 'plastinka.png',
     control: 'igla.png',
@@ -15,9 +16,14 @@ app.value('images', {
     speedSlider: 'slider_base.png',//
     speedSliderButton: 'slider.png',
     blueButtonOn: 'blue.png',
-    blueButtonOff: 'blue_off.png',
+    blueButtonOff: 'blue.png',
     redButtonOn: 'red.png',
-    redButtonOff: 'red_off.png'
+    redButtonOff: 'red.png',
+    sound_Wave: 'sound-wave.png',
+    sound_Wave_Control: 'sound-wave-control-btn.png',
+    sound_Wave_Cont_Btn: 'sound-wave-controll.png'
+
+
 
     /*powerOn: 'btn-power-on.png',
     powerOff: 'btn-power-off.png',
