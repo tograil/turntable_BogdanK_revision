@@ -15,9 +15,9 @@ app.value('images', {
     speedSlider: 'slider_base.png',
     speedSliderButton: 'slider.png',
     blueButtonOn: 'blue.png',
-    blueButtonOff: '',
+    blueButtonOff: 'blue_off.png',
     redButtonOn: 'red.png',
-    redButtonOff: ''
+    redButtonOff: 'red_off.png'
 
     /*powerOn: 'btn-power-on.png',
     powerOff: 'btn-power-off.png',
