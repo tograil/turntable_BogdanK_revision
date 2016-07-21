@@ -8,7 +8,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
         loadedImages.loadImages().then(function (images) {
             addTurntable(stage, images);
-            addWaveControl(stage, images)
+          /*  addWaveControl(stage, images)*/
         });
 
         function addTurntable(stage, images) {
@@ -60,12 +60,21 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 speedBase: images.speedSlider
             });
 
+            addSoundWaveSlider (turntableGroup, turntableLayer, {
+
+                sound_wave: images.sound_Wave,
+                soundWave_wave_control: images.sound_Wave_Control,
+                sound_wave_cont_btn: images.sound_Wave_Cont_Btn
+
+
+            });
+
             turntableLayer.add(turntableGroup);
 
             stage.add(turntableLayer);
         }
 
-        function addWaveControl(stage, images) {
+        /*function addWaveControl(stage, images) {
             var waveControlLayer = new Konva.Layer();
 
             var group = new Konva.Group({
@@ -108,7 +117,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             waveControlLayer.add(group);
             stage.add(waveControlLayer);
 
-        }
+      }
+      */
     }
 
     return {
