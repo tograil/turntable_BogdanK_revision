@@ -12,7 +12,7 @@ app.value('images', {
     speed33Off: 'bttn_33.png',
     speed45On: 'bttn_45_on.png',
     speed45Off: 'bttn_45.png',
-    speedSlider: 'slider_base.png',
+    speedSlider: 'slider_base.png',//
     speedSliderButton: 'slider.png',
     blueButtonOn: 'blue.png',
     blueButtonOff: 'blue_off.png',
