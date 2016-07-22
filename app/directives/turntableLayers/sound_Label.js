@@ -5,27 +5,27 @@ function addSoundWaveSlider(stage, layer, params) {
    var group = new Konva.Group({
 
         x: 0,
-        y: 50
+        y: 0
 
    });
 
    var soundWaveEqulizer = new Konva.Image ({
 
-        x: 0,
-        y: 0,
+        x: 100,
+        y: 400,
         image: params.sound_wave,
-        width: 340,
-        height: 10
+        width: 400,
+        height: 30
 
    });
 
     var soundWaveControl = new Konva.Image({
 
-        x:0,
-        y:0,
+        x: 97,
+        y: 443,
         image: params.sound_wave_control,
-        width: 340,
-        height: 50,
+        width: 405,
+        height: 8,
 
     });
 
@@ -33,29 +33,28 @@ function addSoundWaveSlider(stage, layer, params) {
 
     var soundWaveButton = new Konva.Image({
 
-      x:0,
-      y:0,
+      x: 90,
+      y: 437,
       image: params.sound_wave_cont_btn,
-      width: 50,
-      height: 50,
+      width: 20,
+      height: 20,
       offset: {
-
-        x:15,
-        y:15
+        x:0,
+        y:0
 
       },
 
       draggable: true,
 
-      dragS_WaveBtn: function (){
+      dragS_WaveBtn: function (pos){
 
            var xPos = pos.x;
 
-           if (xPos <=0)
-                xPos = 0;
+           if (xPos <= 120)
+                xPos = 120;
 
-           if (xPos >= 360)
-                xPos = 360;
+           if (xPos >= 405)
+                xPos = 405;
 
 
            return {
@@ -66,8 +65,9 @@ function addSoundWaveSlider(stage, layer, params) {
         }
     });
 
-    group.add(soundWaveButton);
     group.add(soundWaveControl);
+    group.add(soundWaveButton);
+
     group.add(soundWaveEqulizer);
 
     stage.add(group);

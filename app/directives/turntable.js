@@ -63,7 +63,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             addSoundWaveSlider (turntableGroup, turntableLayer, {
 
                 sound_wave: images.sound_Wave,
-                soundWave_wave_control: images.sound_Wave_Control,
+                sound_wave_control: images.sound_Wave_Control,
                 sound_wave_cont_btn: images.sound_Wave_Cont_Btn
 
 

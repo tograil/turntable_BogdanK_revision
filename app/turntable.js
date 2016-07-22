@@ -20,8 +20,8 @@ app.value('images', {
     redButtonOn: 'red.png',
     redButtonOff: 'red.png',
     sound_Wave: 'sound-wave.png',
-    sound_Wave_Control: 'sound-wave-control-btn.png',
-    sound_Wave_Cont_Btn: 'sound-wave-controll.png'
+    sound_Wave_Control: 'sound-wave-controll.png',
+    sound_Wave_Cont_Btn: 'sound-wave-controll-btn.png'
 
 
 

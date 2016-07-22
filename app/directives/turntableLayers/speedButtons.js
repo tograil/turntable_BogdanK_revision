@@ -2,7 +2,7 @@ function add3345Layer(stage, layer, params) {
 
 var group = new Konva.Group({
     x: 26,
-    y: 395
+    y: 418
 });
 
 var off33 = new Konva.Image({

@@ -1,7 +1,7 @@
 function addSpeedSlider(stage, layer, params) {
    var group = new Konva.Group({
-            x: 540,
-            y: 170
+            x: 458,
+            y: 200
         });
 
     var speedSliderBase = new Konva.Image({
@@ -13,8 +13,9 @@ function addSpeedSlider(stage, layer, params) {
     });
 
     var speedSliderButton = new Konva.Image({
-       x: 27,
-        y: 76,
+
+        x: 27,
+        y: 82,
         image: params.speedButton,
         width: 29,
         height: 30,
@@ -26,10 +27,10 @@ function addSpeedSlider(stage, layer, params) {
         dragBoundFunc: function (pos) {
             var ypos = pos.y;
 
-            if(ypos <= 240)
-                ypos = 240;
-            if(ypos >= 360)
-                ypos = 360;
+            if(ypos <= 270)
+                ypos = 270;
+            if(ypos >= 400)
+                ypos = 400;
             return {
                 y: ypos,
                 x: this.getAbsolutePosition().x
