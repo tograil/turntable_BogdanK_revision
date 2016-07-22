@@ -3,8 +3,8 @@ function addBlueButton (stage, layer, params) {
 
     var group = new Konva.Group ({
 
-         x: 0,
-         y: 0
+         x: 250,
+         y: 315
 
 
     });
@@ -15,8 +15,10 @@ function addBlueButton (stage, layer, params) {
          y: 0,
 
          image: params.blue_Button_Off,
-         width: 10,
-         height: 10
+         width: 75,
+         height: this.width + 4,
+
+
 
     });
 
@@ -25,18 +27,22 @@ function addBlueButton (stage, layer, params) {
      x: 0,
      y: 0,
      image: params.blue_Button_On,
-     width: 10,
-     height: 10,
+     width: 75,
+     height: this.width + 4,
      visible: false
+
+
 
     });
 
-/*blue_btn_on.hide();*/
+    group.add(blue_btn_off);
+    group.add(blue_btn_on);
+    blue_btn_on.hide();
 
 blue_btn_off.on('mousedown', function(){
 
-blue_btn_off.show();
 blue_btn_off.hide();
+blue_btn_on.show();
 layer.draw();
 
 
@@ -45,15 +51,14 @@ layer.draw();
 
 blue_btn_on.on('mousedown', function(){
 
-blue_btn_on.show();
-blue_btn_off.hide();
+blue_btn_on.hide();
+blue_btn_off.show();
 layer.draw();
 
 })
 
 
-group.add(blue_btn_off);
-group.add(blue_btn_on);
+
 stage.add(group);
 
 }
