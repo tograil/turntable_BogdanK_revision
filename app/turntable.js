@@ -1,5 +1,7 @@
 var app = angular.module('tt', []);
 
+angular.module();
+
 app.value('imagePath', 'app/img/');
 
 app.value('images', {
