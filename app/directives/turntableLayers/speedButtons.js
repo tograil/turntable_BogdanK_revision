@@ -23,7 +23,7 @@ var on33 = new Konva.Image({
 });
 
 var off45 = new Konva.Image({
-    x:29,
+    x:32,
     y:0,
     image: params.off45,
     width: 32,
@@ -31,7 +31,7 @@ var off45 = new Konva.Image({
 });
 
 var on45 = new Konva.Image({
-    x:29,
+    x:32,
     y:0,
     image: params.on45,
     width: 32,

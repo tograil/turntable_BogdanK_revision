@@ -69,6 +69,23 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 
+            addBlueButton(turntableGroup, turntableLayer,{
+
+                 blue_Button_On: images.blueButtonOn,
+                 blue_Button_Off: images.blueButtonOff
+
+            });
+
+            addRedButton(turntableGroup, turntableLayer, {
+
+                red_Button_On: images.redButtonOn,
+                red_Button_Off: images.redButtonOff
+
+
+            });
+
+
+
             turntableLayer.add(turntableGroup);
 
             stage.add(turntableLayer);

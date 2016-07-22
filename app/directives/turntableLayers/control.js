@@ -5,13 +5,13 @@ function addControlLayer(stage, layer, params) {
 
     var control = new Konva.Image({
         x:428,
-        y:94,
+        y: 100,
         image: params.image,
         width: 110,
         height: 310,
         offset: {
-            x: 55,
-            y: 65
+            x: 65,
+            y: 80
         }
     });
 

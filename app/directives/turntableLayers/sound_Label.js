@@ -35,9 +35,12 @@ function addSoundWaveSlider(stage, layer, params) {
 
       x: 90,
       y: 437,
+
       image: params.sound_wave_cont_btn,
+
       width: 20,
       height: 20,
+
       offset: {
         x:0,
         y:0
@@ -46,20 +49,20 @@ function addSoundWaveSlider(stage, layer, params) {
 
       draggable: true,
 
-      dragS_WaveBtn: function (pos){
+      dragBoundFunc: function (pos){
 
-           var xPos = pos.x;
+           var xpos = pos.x;
 
-           if (xPos <= 120)
-                xPos = 120;
+           if (xpos <= 160)
+                xpos = 160;
 
-           if (xPos >= 405)
-                xPos = 405;
+           if (xpos >= 558)
+                xpos = 558;
 
 
            return {
 
-               x: xPos,
+               x: xpos,
                y: this.getAbsolutePosition().y
            }
         }
