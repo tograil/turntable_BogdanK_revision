@@ -11,11 +11,11 @@ var songList = angular.module('s_list',[]);
        });
 
       sound_Cloud.get('tracks', function(tracks){
-  
+
             var i,
             for (i = 0, i < tracks.length, i++){
 
-              sond_cloud.stream('/tracks/' + tracks[i].id, function (sm_object){
+              sound_cloud.stream('/tracks/' + tracks[i].id, function (sm_object){
 
                var track = {
 
@@ -26,13 +26,18 @@ var songList = angular.module('s_list',[]);
 
                };
 
+              $scope.$apply(function(){
 
-            }
+                   $scope.songs.push(track);
 
-          })
-      })
+                   });
 
+                 });
+              };
+          });
+      };
 
+]);
 
 /*
 .controller('MainCtrl', ['$scope', function ($scope) {

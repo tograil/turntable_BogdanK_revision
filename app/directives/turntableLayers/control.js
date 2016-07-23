@@ -12,8 +12,41 @@ function addControlLayer(stage, layer, params) {
         offset: {
             x: 65,
             y: 80
-        }
+        },
+
+ });
+
+
+ control.on('mousemove', function (){
+
+    var  controlled = true,
+         mousePos = control.getPointerPosition();
+         if (controlled && mousePos) {
+
+              var x = mousePos.x - control.getX(),
+                  y = mousePos.y - control.getY(),
+                  atan = Math.atan(y/x),
+                  rotation = x >= 0 ? atan : atan + Math.PI;
+                  control.setRotation(rotation - control.startRotation - (control.getAngle() / 2));
+
+/*
+                  function rotateObject(object,degreeX=0, degreeY=0, degreeZ=0){
+
+                     degreeX = (degreeX * Math.PI)/180;
+                     degreeY = (degreeY * Math.PI)/180;
+                     degreeZ = (degreeZ * Math.PI)/180;
+
+                     object.rotateX(degreeX);
+                     object.rotateY(degreeY);
+                     object.rotateZ(degreeZ);
+
+                  }
+
+*/
+         }
     });
+
+
 
     controlGroup.add(control);
 

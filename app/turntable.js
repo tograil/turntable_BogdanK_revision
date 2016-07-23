@@ -1,6 +1,5 @@
 var app = angular.module('tt', []);
 
-angular.module();
 
 app.value('imagePath', 'app/img/');
 
@@ -69,4 +68,13 @@ app.factory('loadedImages', ['$q', 'imagePath', 'images', function ($q, imagePat
         loadImages: loadImages
     }
 
+}]);
+
+/*
+app.contoller('playlistContr',['$scope', function($scope){
+
+       $scope.songs
+
 }])
+
+*/
