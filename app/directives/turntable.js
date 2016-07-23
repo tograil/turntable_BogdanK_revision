@@ -84,7 +84,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 
-
+            /*bind();*/
 
             turntableLayer.add(turntableGroup);
 
@@ -137,6 +137,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
       }
       */
     }
+
+
 
     return {
         restrict: 'E',

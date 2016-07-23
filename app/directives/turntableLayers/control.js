@@ -14,41 +14,9 @@ function addControlLayer(stage, layer, params) {
             y: 80
         },
 
- });
+   });
 
-
- control.on('mousemove', function (){
-
-    var  controlled = true,
-         mousePos = control.getPointerPosition();
-         if (controlled && mousePos) {
-
-              var x = mousePos.x - control.getX(),
-                  y = mousePos.y - control.getY(),
-                  atan = Math.atan(y/x),
-                  rotation = x >= 0 ? atan : atan + Math.PI;
-                  control.setRotation(rotation - control.startRotation - (control.getAngle() / 2));
-
-/*
-                  function rotateObject(object,degreeX=0, degreeY=0, degreeZ=0){
-
-                     degreeX = (degreeX * Math.PI)/180;
-                     degreeY = (degreeY * Math.PI)/180;
-                     degreeZ = (degreeZ * Math.PI)/180;
-
-                     object.rotateX(degreeX);
-                     object.rotateY(degreeY);
-                     object.rotateZ(degreeZ);
-
-                  }
-
-*/
-         }
-    });
-
-
-
-    controlGroup.add(control);
+  controlGroup.add(control);
 
     var angularSpeed = 90;
     var pos = 0;
@@ -86,4 +54,30 @@ function addControlLayer(stage, layer, params) {
         start: controlStart,
         stop: controlStop
     }
-}
+
+          control.on('mousedown', function() {
+                angularVelocity = 0;
+                controlled = true;
+                /*var control = evt.target;*/
+            });
+            // add listeners to container
+          control.on('mouseup', function() {
+
+                controlled = false;
+
+              }, false);
+
+            control.on('mousemove', function() {
+                var controlled = true
+                 mousePos = stage.getPointerPosition();
+                if(controlled && mousePos) {
+                    var x = mousePos.x;
+                    var y = mousePos.y;
+                    var atan = Math.atan(y / x);
+                    var rotation = x >= 0 ? atan : atan + Math.PI;
+                    /*var targetGroup = target.getParent();*/
+
+                    control.rotate(rotation - control.startRotation - (control.getAngle() / 2));
+                }
+            }, false);
+        }
