@@ -1,4 +1,5 @@
 function addControlLayer(stage, layer, params) {
+
     var controlGroup = new Konva.Group();
 
     var rollStarted = false;
@@ -38,6 +39,67 @@ function addControlLayer(stage, layer, params) {
 
     stage.add(controlGroup);
 
+
+
+    control.on('mouseclick', function() {
+
+            controlled = true;
+            control.show();
+            layer.draw();
+
+});
+
+    control.on('mousemove', function(){
+
+
+         /*var angle = Math.PI/180;*/
+         /*originPointX = control.getAbsolutePosition().x,*/
+         /*originPointY = control.getAbsolutePosition().y;*/
+        /*control.rotate(angle*50);*/
+          var angle = 0
+              speed = 10;
+              if (angle <=0 ) {
+                   angle += 1;
+                   control.rotate((angle*(Math.PI/180))*speed);        layer.draw();
+                   layer.draw();
+
+
+
+              }
+              else if(angle >= 30) {
+                  angle -= 1;
+                  control.rotate((angle*(Math.PI/180))*speed);
+                  layer.draw();
+
+
+
+            }
+
+
+  });
+
+
+
+/*
+                control.on('mousemove', function(evt) {
+                    var controlled = true
+                     mousePos = stage.getPointerPosition();
+                    if(controlled) {
+                        var x = mouseoPos.X - stage.GetX();
+                        var y = mousePos.Y - stage.GetY();
+                        var angle = Math.atan(y / x);
+
+
+                        var rotation = x >= 0 ? angle : angle + Math.PI;
+                       control.rotate(rotation - (control.getAngle() / 2));
+
+                    }
+                }, false);
+
+                     */
+
+
+
     function controlStart() {
         rollStarted = true;
         animOne.start();
@@ -53,31 +115,16 @@ function addControlLayer(stage, layer, params) {
     return {
         start: controlStart,
         stop: controlStop
-    }
 
-          control.on('mousedown', function() {
-                angularVelocity = 0;
-                controlled = true;
-                /*var control = evt.target;*/
-            });
+    }
+}
+
+
             // add listeners to container
+            /*
           control.on('mouseup', function() {
 
                 controlled = false;
 
               }, false);
-
-            control.on('mousemove', function() {
-                var controlled = true
-                 mousePos = stage.getPointerPosition();
-                if(controlled && mousePos) {
-                    var x = mousePos.x;
-                    var y = mousePos.y;
-                    var atan = Math.atan(y / x);
-                    var rotation = x >= 0 ? atan : atan + Math.PI;
-                    /*var targetGroup = target.getParent();*/
-
-                    control.rotate(rotation - control.startRotation - (control.getAngle() / 2));
-                }
-            }, false);
-        }
+*/

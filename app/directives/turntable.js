@@ -32,6 +32,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 stop: function () {
                     disc.stop();
                 }
+
+
             });
 
             var play = addOnOffLayer(turntableGroup, turntableLayer, {
@@ -69,21 +71,23 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 
-            addBlueButton(turntableGroup, turntableLayer,{
+            addBlueRedButton(turntableGroup, turntableLayer,{
 
                  blue_Button_On: images.blueButtonOn,
-                 blue_Button_Off: images.blueButtonOff
+                 blue_Button_Off: images.blueButtonOff,
+                 red_Button_On: images.redButtonOn,
+                 red_Button_Off: images.redButtonOff
 
             });
 
-            addRedButton(turntableGroup, turntableLayer, {
+          /*  addRedButton(turntableGroup, turntableLayer, {
 
                 red_Button_On: images.redButtonOn,
                 red_Button_Off: images.redButtonOff
 
 
             });
-
+*/
             /*bind();*/
 
             turntableLayer.add(turntableGroup);

@@ -1,6 +1,6 @@
 function addRedButton (stage, layer, params) {
 
-    var group = new Konva.Group ({
+    var buttonsGroup = new Konva.Group ({
 
          x: -130,
          y: 100
@@ -33,8 +33,8 @@ function addRedButton (stage, layer, params) {
     });
 
 
-    group.add(red_btn_off);
-    group.add(red_btn_on);
+    buttonsGroup.add(red_btn_off);
+    buttonsGroup.add(red_btn_on);
     red_btn_on.hide();
 
 red_btn_off.on('mousedown', function (){
@@ -56,6 +56,6 @@ red_btn_on.on('mousedown', function(){
 
 
 
-stage.add(group);
+stage.add(buttonsGroup);
 
 }
