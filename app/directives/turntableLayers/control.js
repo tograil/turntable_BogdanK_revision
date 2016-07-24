@@ -40,46 +40,35 @@ function addControlLayer(stage, layer, params) {
     stage.add(controlGroup);
 
 
+control.addEventListener ('mousedown', function (){
 
-    control.on('mouseclick', function() {
+  /*  control = true;*/
 
-            controlled = true;
-            control.show();
-            layer.draw();
-
-});
+})
 
     control.on('mousemove', function(){
 
-
-         /*var angle = Math.PI/180;*/
-         /*originPointX = control.getAbsolutePosition().x,*/
-         /*originPointY = control.getAbsolutePosition().y;*/
-        /*control.rotate(angle*50);*/
           var angle = 0
-              speed = 10;
-              if (angle <=0 ) {
+              speed = 40,
+              angle_max = 30*Math.PI/180;
+              if (angle <=angle_max ) {
                    angle += 1;
-                   control.rotate((angle*(Math.PI/180))*speed);        layer.draw();
+                   control.rotate((angle*(Math.PI/180))*speed);
                    layer.draw();
-
-
-
               }
-              else if(angle >= 30) {
+              else if(angle >= angle_max) {
                   angle -= 1;
                   control.rotate((angle*(Math.PI/180))*speed);
                   layer.draw();
 
-
-
             }
-
-
   });
 
+  control.addEventListener('mouseup', function(){
 
+  /*  control = getCurrentPosition();*/
 
+  })
 /*
                 control.on('mousemove', function(evt) {
                     var controlled = true
@@ -97,9 +86,6 @@ function addControlLayer(stage, layer, params) {
                 }, false);
 
                      */
-
-
-
     function controlStart() {
         rollStarted = true;
         animOne.start();
