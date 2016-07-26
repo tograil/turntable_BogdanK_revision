@@ -11,10 +11,10 @@ function addSoundWaveSlider(stage, layer, params) {
 
   var rect = new Konva.Rect ({
 
-    x: -49,
+    x: -48,
     y: 330,
 
-    width: 435,
+    width: 434,
     height: 80,
     fill: ('rgba(61, 60, 55, 0.95)'),
 
@@ -22,10 +22,10 @@ function addSoundWaveSlider(stage, layer, params) {
 
    var soundWaveEqulizer = new Konva.Image ({
 
-        x: -40,
+        x: -36,
         y: 340,
         image: params.sound_wave,
-        width: 415,
+        width: 410,
         height: 30
 
    });

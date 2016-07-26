@@ -3,8 +3,8 @@ function addOnOffLayer(stage, layer, params) {
         x: 15,
         y: 290,
         offset: {
-            x: 55,
-            y: 10
+            x: 54,
+            y: 8
         }
     });
 
