@@ -12,8 +12,8 @@ function addControlLayer(stage, layer, params) {
         width: 109,
         height: 337,
         offset: {
-            x: 55,
-            y: 80
+            x: 54,
+            y: 81
         },
 
    });
@@ -41,36 +41,28 @@ function addControlLayer(stage, layer, params) {
     stage.add(controlGroup);
 
 
-control.addEventListener ('mousemove', function (){
+control.addEventListener ('mousedown', function (){
 
   /*  control = true;*/
 
 })
 
-    control.on('mousedown', function(){
+    control.on('mousemove', function(){
 
           var angle = 0
-              speed = 40,
-              angle_max = 30*(Math.PI/180);
-/*to rad
+              speed = 30,
+              angle_max = 90*(Math.PI/180);
 
-function () {
-
-
-
-}
-        */
-              if (angle <=angle_max ) {
+                   if (angle <=angle_max ) {
                    angle+= 1;
                    control.rotate((angle*(Math.PI/180))*speed);
-                   layer.draw();
               }
               else if(angle >= angle_max) {
                    angle-= 1;
                    control.rotate((angle*(Math.PI/180))*speed);
-                   layer.draw();
 
             }
+            layer.batchDraw();
   });
 
   control.addEventListener('mouseup', function(){
