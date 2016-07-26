@@ -3,7 +3,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
             width: 478,
-            height: 402
+            height: 520
         });
 
         loadedImages.loadImages().then(function (images) {
