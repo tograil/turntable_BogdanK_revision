@@ -5,13 +5,14 @@ function addControlLayer(stage, layer, params) {
     var rollStarted = false;
 
     var control = new Konva.Image({
-        x:428,
-        y: 100,
+        x: 310,
+        y: 57,
+
         image: params.image,
-        width: 110,
-        height: 310,
+        width: 109,
+        height: 337,
         offset: {
-            x: 65,
+            x: 55,
             y: 80
         },
 
@@ -40,26 +41,34 @@ function addControlLayer(stage, layer, params) {
     stage.add(controlGroup);
 
 
-control.addEventListener ('mousedown', function (){
+control.addEventListener ('mousemove', function (){
 
   /*  control = true;*/
 
 })
 
-    control.on('mousemove', function(){
+    control.on('mousedown', function(){
 
           var angle = 0
               speed = 40,
-              angle_max = 30*Math.PI/180;
+              angle_max = 30*(Math.PI/180);
+/*to rad
+
+function () {
+
+
+
+}
+        */
               if (angle <=angle_max ) {
-                   angle += 1;
+                   angle+= 1;
                    control.rotate((angle*(Math.PI/180))*speed);
                    layer.draw();
               }
               else if(angle >= angle_max) {
-                  angle -= 1;
-                  control.rotate((angle*(Math.PI/180))*speed);
-                  layer.draw();
+                   angle-= 1;
+                   control.rotate((angle*(Math.PI/180))*speed);
+                   layer.draw();
 
             }
   });

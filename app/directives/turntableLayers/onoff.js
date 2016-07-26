@@ -1,7 +1,7 @@
 function addOnOffLayer(stage, layer, params) {
     var group = new Konva.Group({
-        x: 30,
-        y: 403,
+        x: 15,
+        y: 290,
         offset: {
             x: 55,
             y: 10
@@ -12,16 +12,16 @@ function addOnOffLayer(stage, layer, params) {
         x:0,
         y:0,
         image: params.off,
-        width: 50,
-        height: 40
+        width: 49,
+        height: 37
     });
 
     var on = new Konva.Image({
         x:0,
         y:0,
         image: params.on,
-        width: 50,
-        height: 40,
+        width: 49,
+        height: 37,
         visible: false
     });
 

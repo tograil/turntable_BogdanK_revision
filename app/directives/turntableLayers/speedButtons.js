@@ -1,16 +1,16 @@
 function add3345Layer(stage, layer, params) {
 
 var group = new Konva.Group({
-    x: 26,
-    y: 418
+    x: 10,
+    y: 305
 });
 
 var off33 = new Konva.Image({
     x:0,
     y:0,
     image: params.off33,
-    width: 32,
-    height: 12,
+    width: 30,
+    height: 10,
     visible: false
 });
 
@@ -18,24 +18,24 @@ var on33 = new Konva.Image({
     x:0,
     y:0,
     image: params.on33,
-    width: 32,
-    height: 12
+    width: 30,
+    height: 10
 });
 
 var off45 = new Konva.Image({
     x:32,
     y:0,
     image: params.off45,
-    width: 32,
-    height: 12
+    width: 30,
+    height: 10
 });
 
 var on45 = new Konva.Image({
     x:32,
     y:0,
     image: params.on45,
-    width: 32,
-    height: 12,
+    width: 30,
+    height: 10,
     visible: false
 });
 

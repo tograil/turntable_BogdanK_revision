@@ -2,8 +2,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
     function link(scope, element, attrs) {
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
-            width: 700,
-            height: 575
+            width: 478,
+            height: 402
         });
 
         loadedImages.loadImages().then(function (images) {
@@ -23,6 +23,21 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             /*addMachineLayer(turntableGroup, images.machine);*/
             var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk);
+
+
+            addSpeedSlider(turntableGroup, turntableLayer, {
+                speedButton: images.speedSliderButton,
+                speedBase: images.speedSlider
+            });
+
+            addBlueRedButton(turntableGroup, turntableLayer,{
+
+                 blue_Button_On: images.blueButtonOn,
+                 blue_Button_Off: images.blueButtonOff,
+                 red_Button_On: images.redButtonOn,
+                 red_Button_Off: images.redButtonOff
+
+            });
 
             var control = addControlLayer(turntableGroup, turntableLayer, {
                 image: images.control,
@@ -57,10 +72,6 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 off45: images.speed45Off
             });
 
-            addSpeedSlider(turntableGroup, turntableLayer, {
-                speedButton: images.speedSliderButton,
-                speedBase: images.speedSlider
-            });
 
             addSoundWaveSlider (turntableGroup, turntableLayer, {
 
@@ -71,14 +82,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 
-            addBlueRedButton(turntableGroup, turntableLayer,{
 
-                 blue_Button_On: images.blueButtonOn,
-                 blue_Button_Off: images.blueButtonOff,
-                 red_Button_On: images.redButtonOn,
-                 red_Button_Off: images.redButtonOff
-
-            });
 
           /*  addRedButton(turntableGroup, turntableLayer, {
 
@@ -88,10 +92,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 */
-            /*bind();*/
 
             turntableLayer.add(turntableGroup);
-
             stage.add(turntableLayer);
         }
 

@@ -3,16 +3,16 @@ function addBlueRedButton (stage, layer, params) {
 
     var group = new Konva.Group ({
 
-         x: 250,
-         y: 315
+         x: 142,
+         y: 285
 
 
     });
 
     var blue_btn_off = new Konva.Image ({
 
-         x: 0,
-         y: 0,
+         x: 26,
+         y: -30,
 
          image: params.blue_Button_Off,
          width: 75,
@@ -24,8 +24,8 @@ function addBlueRedButton (stage, layer, params) {
 
     var blue_btn_on = new Konva.Image ({
 
-     x: 0,
-     y: 0,
+     x: 26,
+     y: -30,
      image: params.blue_Button_On,
      width: 75,
      height: this.width + 4,
@@ -34,8 +34,8 @@ function addBlueRedButton (stage, layer, params) {
 });
      var red_btn_off = new Konva.Image ({
 
-          x: -280,
-          y: -100,
+          x: -182,
+          y: -90,
           image: params.red_Button_Off,
 
           width: 71,
@@ -47,8 +47,8 @@ function addBlueRedButton (stage, layer, params) {
 
      var red_btn_on = new Konva.Image ({
 
-      x: -280,
-      y: -100,
+      x: -182,
+      y: -90,
       image: params.red_Button_On,
       width: 71,
       height: this.width + 4,
