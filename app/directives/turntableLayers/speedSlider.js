@@ -1,7 +1,7 @@
 function addSpeedSlider(stage, layer, params, disc) {
    var group = new Konva.Group({
-            x: 322,
-            y: 130
+            x: 383,
+            y: 164
         });
 
     var speedSliderBase = new Konva.Image({
@@ -38,6 +38,7 @@ function addSpeedSlider(stage, layer, params, disc) {
             if(ypos >= 320)
                 ypos = 320;
                 /*angularSpeed = 90;*/
+
             return {
                 y: ypos,
                 x: this.getAbsolutePosition().x,

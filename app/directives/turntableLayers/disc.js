@@ -1,9 +1,9 @@
-function addDiscLayer(stage, layer, image, spSlider) {
+function addDiscLayer(stage, layer, image, spSlider){
     var group = new Konva.Group();
 
     var disc = new Konva.Image({
-        x: 130,
-        y: 148,
+        x: 180,
+        y: 172,
 
         image: image,
         width: 338,

@@ -7,8 +7,8 @@ var group = new Konva.Group({
 });
 
 var off33 = new Konva.Image({
-    x:0,
-    y:0,
+    x: 48,
+    y: 29,
     image: params.off33,
     width: 30,
     height: 10,
@@ -17,8 +17,8 @@ var off33 = new Konva.Image({
 });
 
 var on33 = new Konva.Image({
-    x:0,
-    y:0,
+    x: 48,
+    y: 29,
     image: params.on33,
     width: 30,
     height: 10,
@@ -26,8 +26,8 @@ var on33 = new Konva.Image({
 });
 
 var off45 = new Konva.Image({
-    x:32,
-    y:0,
+    x: 80,
+    y: 29,
     image: params.off45,
     width: 30,
     height: 10,
@@ -35,8 +35,8 @@ var off45 = new Konva.Image({
 });
 
 var on45 = new Konva.Image({
-    x:32,
-    y:0,
+    x: 80,
+    y: 29,
     image: params.on45,
     width: 30,
     height: 10,

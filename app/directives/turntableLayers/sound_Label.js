@@ -4,8 +4,8 @@ function addSoundWaveSlider(stage, layer, params) {
 
    var group = new Konva.Group({
 
-        x: 0,
-        y: 0
+        x: 53,
+        y: 29
 
    });
 

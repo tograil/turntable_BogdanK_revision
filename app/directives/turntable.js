@@ -17,8 +17,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             var turntableLayer = new Konva.Layer();
 
             var turntableGroup = new Konva.Group({
-                x: 70,
-                y: 50
+                x: 17,
+                y: 22
             });
 
             /*addMachineLayer(turntableGroup, images.machine);*/
@@ -64,7 +64,10 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 */
             var control = addControlLayer(turntableGroup, turntableLayer, {
 
-                image: images.control,
+              control_high_part: images.control_high_part,
+              control_mid_part: images.control_mid_part,
+              control_smallest_part: images.control_smallest_part,
+              control_low_part_left: images.control_low_part_left,
 
                 start: function () {
                     disc.start();

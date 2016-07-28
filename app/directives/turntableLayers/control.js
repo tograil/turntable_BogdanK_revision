@@ -1,30 +1,95 @@
 function addControlLayer(stage, layer, params) {
 
-    var controlGroup = new Konva.Group();
+    var controlGroup = new Konva.Group(
+      {
+
+          x: 362.5,
+          y: 78,
+          width: 109,
+          height: 337,
+
+     });
 
     var rollStarted = false;
 
-    var controlImage = new Konva.Image({
-        x: 310,
-        y: 57,
+    var controlImage_up_mid = new Konva.Image({
 
-        image: params.image,
-        width: 109,
-        height: 337,
+        x:0,
+        y:0,
+        image: params.control_high_part,
+
+        width: 91,
+        height: 139,
+
         offset: {
-            x: 54,
-            y: 81
+            x: 0,
+            y: 0
         },
 
    });
 
-  controlGroup.add(controlImage);
+   var controlImage_mid_right = new Konva.Image({
+
+       x: 138,
+       y: 54,
+       width: 25,
+       height: 116,
+
+       image: params.control_mid_part,
+       offset: {
+
+           x: 0,
+           y: 0
+       },
+
+  });
+
+  var controlImage_smallest = new Konva.Image({
+
+      x: 0,
+      y: 259,
+      width: 6,
+      height: 11,
+
+      image: params.control_smallest_part,
+      offset: {
+
+          x: 0,
+          y: 0
+      },
+
+ });
+
+
+ var controlImage_low_left = new Konva.Image({
+
+     x: 0,
+     y: 150,
+     width: 55,
+     height: 84,
+
+     image: params.control_low_part_left,
+     offset: {
+
+         x: 0,
+         y: 0
+     },
+
+});
+
+
+
+  controlGroup.add(controlImage_up_mid);
+  controlGroup.add(controlImage_mid_right);
+  controlGroup.add(controlImage_low_left);
+  controlGroup.add(controlImage_smallest);
+
 
     var angularSpeed = 90;
     var pos = 0;
     var animOne = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * angularSpeed / 1000;
-        controlImage.rotate(angleDiff);
+        controlGroup.rotate(angleDiff);
         pos++;
         if(pos >= 25)
             animOne.stop();
@@ -32,7 +97,7 @@ function addControlLayer(stage, layer, params) {
 
     var animTwo = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * -angularSpeed / 1000;
-        controlImage.rotate(angleDiff);
+        controlGroup.rotate(angleDiff);
         pos--;
         if(pos <= 0)
             animTwo.stop();
@@ -66,7 +131,7 @@ control.addEventListener ('mousedown', function (){
   });
 */
 
-  controlImage.addEventListener('mousedown', function(){
+  controlGroup.addEventListener('mousedown', function(){
 
     alert("hello");
 
@@ -107,8 +172,9 @@ control.addEventListener ('mousedown', function (){
         start: controlStart,
         stop: controlStop
 
-    }
-}
+      }
+  }
+
 
 
             // add listeners to container

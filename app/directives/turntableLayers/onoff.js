@@ -1,6 +1,6 @@
 function addOnOffLayer(stage, layer, params) {
     var group = new Konva.Group({
-        x: 15,
+        x: 65,
         y: 290,
         offset: {
             x: 54,
@@ -9,8 +9,8 @@ function addOnOffLayer(stage, layer, params) {
     });
 
     var off = new Konva.Image({
-        x:0,
-        y:0,
+        x: 0,
+        y: 30,
         image: params.off,
         width: 49,
         height: 37
@@ -18,7 +18,7 @@ function addOnOffLayer(stage, layer, params) {
 
     var on = new Konva.Image({
         x:0,
-        y:0,
+        y: 30,
         image: params.on,
         width: 49,
         height: 37,
@@ -29,8 +29,8 @@ function addOnOffLayer(stage, layer, params) {
 
     var blue_btn_off = new Konva.Image ({
 
-         x: 210,
-         y: -23,
+         x: 222,
+         y: -2,
          image: params.blue_Button_Off,
 
          width: 69,
@@ -40,8 +40,8 @@ function addOnOffLayer(stage, layer, params) {
 
     var blue_btn_on = new Konva.Image ({
 
-     x: 210,
-     y: -23,
+     x: 222,
+     y: -2,
      image: params.blue_Button_On,
 
      width: 69,
@@ -52,8 +52,8 @@ function addOnOffLayer(stage, layer, params) {
 
      var red_btn_off = new Konva.Image ({
 
-          x: -4,
-          y: -80,
+          x: 0,
+          y: -52,
           image: params.red_Button_Off,
           width: 71,
           height: 95,
@@ -62,8 +62,8 @@ function addOnOffLayer(stage, layer, params) {
 
      var red_btn_on = new Konva.Image ({
 
-      x: -4,
-      y: -80,
+      x: 0,
+      y: -52,
       image: params.red_Button_On,
 
       width: 71,
