@@ -70,7 +70,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 */
-            var control = addControlLayer(turntableGroup, turntableLayer, {
+            var control = addControlLayer(stage, turntableGroup, turntableLayer, {
 
               control_high_part: images.control_high_part,
               control_mid_part: images.control_mid_part,

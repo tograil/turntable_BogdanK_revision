@@ -1,4 +1,4 @@
-function addControlLayer(baseGroup, layer, params) {
+function addControlLayer(stage, baseGroup, layer, params) {
 
     var controlGroup = new Konva.Group(
       {
@@ -145,12 +145,39 @@ control.addEventListener ('mousedown', function (){
   });
 */
 
-  /*controlGroup.addEventListener('mousedown', function(){
+    var controlUsed = false;
 
-    alert("hello");
+    var pos = stage.getPointerPosition();
+    var currentPos = {
+        x: pos.x - image.x(),
+        y: pos.y - image.y()
+    };
 
+    controlSmallPart.addEventListener('mousedown', function(){
+        var pos = stage.getPointerPosition();
+        currentPos = {
+            x: pos.x - image.x(),
+            y: pos.y - image.y()
+        };
+    controlUsed = true;
+  });
 
-  });*/
+    controlSmallPart.addEventListener('mouseup', function(){
+
+        controlUsed = false;
+    });
+
+    controlSmallPart.addEventListener('mousemove', function(){
+
+        if(controlUsed)
+        {
+            var pos = stage.getPointerPosition();
+            var localPos = {
+                x: pos.x - image.x(),
+                y: pos.y - image.y()
+            };
+        }
+    });
 
 
 /*
