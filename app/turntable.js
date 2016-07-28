@@ -10,7 +10,7 @@ app.value('images', {
     control_high_part: 'control_high_part.png',
     control_mid_part: 'control_mid_right_part.png',
     control_smallest_part: 'control_mid_left_small.png',
-    control_low_part_left: 'control_mid_right_part.png',
+    control_low_part_left: 'control_low_left_part.png',
     playOn: 'start_on.png',
     playOff: 'start.png',
     speed33On: 'bttn_33_on.png',
