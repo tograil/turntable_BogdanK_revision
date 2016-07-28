@@ -4,7 +4,7 @@ function addControlLayer(stage, layer, params) {
 
     var rollStarted = false;
 
-    var control = new Konva.Image({
+    var controlImage = new Konva.Image({
         x: 310,
         y: 57,
 
@@ -18,13 +18,13 @@ function addControlLayer(stage, layer, params) {
 
    });
 
-  controlGroup.add(control);
+  controlGroup.add(controlImage);
 
     var angularSpeed = 90;
     var pos = 0;
     var animOne = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * angularSpeed / 1000;
-        control.rotate(angleDiff);
+        controlImage.rotate(angleDiff);
         pos++;
         if(pos >= 25)
             animOne.stop();
@@ -32,7 +32,7 @@ function addControlLayer(stage, layer, params) {
 
     var animTwo = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * -angularSpeed / 1000;
-        control.rotate(angleDiff);
+        controlImage.rotate(angleDiff);
         pos--;
         if(pos <= 0)
             animTwo.stop();
@@ -66,7 +66,7 @@ control.addEventListener ('mousedown', function (){
   });
 */
 
-  control.addEventListener('mouesedown', function(){
+  controlImage.addEventListener('mousedown', function(){
 
     alert("hello");
 
