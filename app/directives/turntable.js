@@ -68,6 +68,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
               control_mid_part: images.control_mid_part,
               control_smallest_part: images.control_smallest_part,
               control_low_part_left: images.control_low_part_left,
+                controlSmallPart: images.controlSmallPart,
 
                 start: function () {
                     disc.start();

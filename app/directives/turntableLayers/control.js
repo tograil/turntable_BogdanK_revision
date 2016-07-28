@@ -42,19 +42,35 @@ function addControlLayer(baseGroup, layer, params) {
 
   var controlImageSmallest = new Konva.Image({
 
-      x: 30.2,
-      y: 244,
-      width: 6,
-      height: 11,
+        x: 30.2,
+        y: 244,
+        width: 6,
+        height: 11,
 
-      image: params.control_smallest_part,
-      offset: {
+        image: params.control_smallest_part,
+        offset: {
 
-          x: 0,
-          y: 0
-      },
+            x: 0,
+            y: 0
+        },
 
- });
+    });
+
+    var controlSmallPart = new Konva.Image({
+
+        x: 30.2,
+        y: 244,
+        width: 6,
+        height: 11,
+
+        image: params.controlSmallPart,
+        offset: {
+
+            x: 0,
+            y: 0
+        },
+
+    });
 
 
  var controlImageLowLeft = new Konva.Image({
@@ -77,7 +93,7 @@ function addControlLayer(baseGroup, layer, params) {
   controlGroup.add(controlImageMidRight);
     controlGroup.add(controlImageSmallest);
     controlGroup.add(controlImageLowLeft);
-
+    controlGroup.add(controlSmallPart);
     //
     //
     baseGroup.add(controlGroup);

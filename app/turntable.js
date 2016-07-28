@@ -11,6 +11,7 @@ app.value('images', {
     control_mid_part: 'control_mid_right_part.png',
     control_smallest_part: 'control_mid_left_small.png',
     control_low_part_left: 'control_low_left_part.png',
+    controlSmallPart: 'control_mid_right_small.png',
     playOn: 'start_on.png',
     playOff: 'start.png',
     speed33On: 'bttn_33_on.png',
@@ -25,7 +26,7 @@ app.value('images', {
     redButtonOff: 'red_off.png',
     sound_Wave: 'sound-wave.png',
     sound_Wave_Control: 'sound-wave-controll.png',
-    sound_Wave_Cont_Btn: 'sound-wave-controll-btn.png'
+    sound_Wave_Cont_Btn: 'sound-wave-controll-btn.png',
 
 
 
