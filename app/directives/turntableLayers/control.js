@@ -1,37 +1,33 @@
-function addControlLayer(stage, layer, params) {
+function addControlLayer(baseGroup, layer, params) {
 
     var controlGroup = new Konva.Group(
       {
-
-          x: 362.5,
-          y: 78,
+          x: 355.5,
+          y: 81.5,
           width: 109,
           height: 337,
+          offset: {
+              x:34,
+              y:74
+          }
 
      });
 
-    var rollStarted = false;
-
-    var controlImage_up_mid = new Konva.Image({
+    var controlImageUpMid = new Konva.Image({
 
         x:0,
         y:0,
         image: params.control_high_part,
 
         width: 91,
-        height: 139,
-
-        offset: {
-            x: 0,
-            y: 0
-        },
+        height: 139
 
    });
 
-   var controlImage_mid_right = new Konva.Image({
+   var controlImageMidRight = new Konva.Image({
 
-       x: 138,
-       y: 54,
+       x: 36.2,
+       y: 139,
        width: 25,
        height: 116,
 
@@ -44,10 +40,10 @@ function addControlLayer(stage, layer, params) {
 
   });
 
-  var controlImage_smallest = new Konva.Image({
+  var controlImageSmallest = new Konva.Image({
 
-      x: 0,
-      y: 259,
+      x: 30.2,
+      y: 244,
       width: 6,
       height: 11,
 
@@ -61,10 +57,9 @@ function addControlLayer(stage, layer, params) {
  });
 
 
- var controlImage_low_left = new Konva.Image({
-
-     x: 0,
-     y: 150,
+ var controlImageLowLeft = new Konva.Image({
+     x: -18.9,
+     y: 255,
      width: 55,
      height: 84,
 
@@ -73,19 +68,22 @@ function addControlLayer(stage, layer, params) {
 
          x: 0,
          y: 0
-     },
-
+     }
 });
 
 
 
-  controlGroup.add(controlImage_up_mid);
-  controlGroup.add(controlImage_mid_right);
-  controlGroup.add(controlImage_low_left);
-  controlGroup.add(controlImage_smallest);
+  controlGroup.add(controlImageUpMid);
+  controlGroup.add(controlImageMidRight);
+    controlGroup.add(controlImageSmallest);
+    controlGroup.add(controlImageLowLeft);
+
+    //
+    //
+    baseGroup.add(controlGroup);
 
 
-    var angularSpeed = 90;
+    /*var angularSpeed = 90;
     var pos = 0;
     var animOne = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * angularSpeed / 1000;
@@ -103,7 +101,7 @@ function addControlLayer(stage, layer, params) {
             animTwo.stop();
     }, layer);
 
-    stage.add(controlGroup);
+
 
 /*
 control.addEventListener ('mousedown', function (){
@@ -131,12 +129,12 @@ control.addEventListener ('mousedown', function (){
   });
 */
 
-  controlGroup.addEventListener('mousedown', function(){
+  /*controlGroup.addEventListener('mousedown', function(){
 
     alert("hello");
 
 
-  });
+  });*/
 
 
 /*

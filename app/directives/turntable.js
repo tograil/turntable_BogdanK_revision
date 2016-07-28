@@ -17,8 +17,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             var turntableLayer = new Konva.Layer();
 
             var turntableGroup = new Konva.Group({
-                x: 17,
-                y: 22
+                x: 22,
+                y: 17
             });
 
             /*addMachineLayer(turntableGroup, images.machine);*/
