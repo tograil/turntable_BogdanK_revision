@@ -22,25 +22,50 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             });
 
             /*addMachineLayer(turntableGroup, images.machine);*/
-            var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk);
+
+          var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk, spSlider);
 
 
-            addSpeedSlider(turntableGroup, turntableLayer, {
+          var spSlider = addSpeedSlider(turntableGroup, turntableLayer, {
+
                 speedButton: images.speedSliderButton,
                 speedBase: images.speedSlider
-            });
 
-            addBlueRedButton(turntableGroup, turntableLayer,{
+          }, disc);
 
-                 blue_Button_On: images.blueButtonOn,
+
+
+        var speedButtons = add3345Layer(turntableGroup, turntableLayer, {
+
+              on33: images.speed33On,
+              off33: images.speed33Off,
+              on45: images.speed45On,
+              off45: images.speed45Off,
+
+
+          }, disc);
+
+          /*  var blueRed_Button = addBlueRedButton(turntableGroup, turntableLayer,{
+
+                /* blue_Button_On: images.blueButtonOn,
                  blue_Button_Off: images.blueButtonOff,
                  red_Button_On: images.redButtonOn,
-                 red_Button_Off: images.redButtonOff
+                 red_Button_Off: images.redButtonOff,
+
+                 start: function () {
+                     disc.start();
+                 },
+                 stop: function () {
+                     disc.stop();
+                 }
+
 
             });
-
+*/
             var control = addControlLayer(turntableGroup, turntableLayer, {
+
                 image: images.control,
+
                 start: function () {
                     disc.start();
                 },
@@ -52,25 +77,33 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             });
 
             var play = addOnOffLayer(turntableGroup, turntableLayer, {
+
+
                 on: images.playOn,
                 off: images.playOff,
+
                 start: control.start,
-                stop: control.stop
+                stop: control.stop,
+
+                blue_Button_On: images.blueButtonOn,
+                blue_Button_Off: images.blueButtonOff,
+                red_Button_On: images.redButtonOn,
+                red_Button_Off: images.redButtonOff,
+
+
+
             });
 
             var power = addPowerLayer(turntableGroup, turntableLayer, {
+
                 on: images.powerOn,
                 off: images.powerOff,
                 start: control.start,
                 stop: control.stop
+
             });
 
-            var speedButtons = add3345Layer(turntableGroup, turntableLayer, {
-                on33: images.speed33On,
-                off33: images.speed33Off,
-                on45: images.speed45On,
-                off45: images.speed45Off
-            });
+
 
 
             addSoundWaveSlider (turntableGroup, turntableLayer, {

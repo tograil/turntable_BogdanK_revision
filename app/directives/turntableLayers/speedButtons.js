@@ -1,8 +1,9 @@
-function add3345Layer(stage, layer, params) {
+function add3345Layer(stage, layer, params, disc) {
 
 var group = new Konva.Group({
     x: 12,
     y: 308
+
 });
 
 var off33 = new Konva.Image({
@@ -11,7 +12,8 @@ var off33 = new Konva.Image({
     image: params.off33,
     width: 30,
     height: 10,
-    visible: false
+
+
 });
 
 var on33 = new Konva.Image({
@@ -19,7 +21,8 @@ var on33 = new Konva.Image({
     y:0,
     image: params.on33,
     width: 30,
-    height: 10
+    height: 10,
+    visible: false
 });
 
 var off45 = new Konva.Image({
@@ -27,7 +30,8 @@ var off45 = new Konva.Image({
     y:0,
     image: params.off45,
     width: 30,
-    height: 10
+    height: 10,
+    visible: false
 });
 
 var on45 = new Konva.Image({
@@ -36,24 +40,28 @@ var on45 = new Konva.Image({
     image: params.on45,
     width: 30,
     height: 10,
-    visible: false
+
 });
+
 
 group.add(on33);
 group.add(off33);
 group.add(on45);
 group.add(off45);
 
-off33.hide();
-on45.hide();
+on33.hide();
+off45.hide();
 
 off45.on('mousedown', function () {
+
     //params.start();
     off45.hide();
     on33.hide();
     off33.show();
     on45.show();
     layer.draw();
+    disc.changeSpeed(60);
+
 });
 
 off33.on('mousedown', function () {
@@ -63,7 +71,17 @@ off33.on('mousedown', function () {
     on33.show();
     off45.show();
     layer.draw();
+    disc.changeSpeed(30);
 });
 
+on45.on('mousedown', function(){
+
+disc.changeSpeed(90);
+
+})
+
+
+
 stage.add(group);
+
 }

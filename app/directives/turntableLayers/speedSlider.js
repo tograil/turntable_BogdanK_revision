@@ -1,4 +1,4 @@
-function addSpeedSlider(stage, layer, params) {
+function addSpeedSlider(stage, layer, params, disc) {
    var group = new Konva.Group({
             x: 322,
             y: 130
@@ -27,20 +27,48 @@ function addSpeedSlider(stage, layer, params) {
 
         draggable: true,
 
+
         dragBoundFunc: function (pos) {
 
             var ypos = pos.y;
 
             if(ypos <= 200)
                 ypos = 200;
+                /*angularSpeed = -90;*/
             if(ypos >= 320)
                 ypos = 320;
+                /*angularSpeed = 90;*/
             return {
                 y: ypos,
-                x: this.getAbsolutePosition().x
+                x: this.getAbsolutePosition().x,
+              /*  angularSpeed: angularSpeed*/
+
             }
         }
+
+
     });
+
+
+
+
+speedSliderButton.on('mousemove', function(){
+
+    var ypos = 0;
+    if (ypos == 200) {
+
+      disc.changeSpeed(90);
+    }
+
+    else if (ypos == 320){
+
+        disc.changeSpeed(-90)
+
+    }
+
+});
+
+
 
     group.add(speedSliderBase);
     group.add(speedSliderButton);

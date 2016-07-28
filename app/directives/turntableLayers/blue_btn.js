@@ -41,8 +41,6 @@ function addBlueRedButton (stage, layer, params) {
           width: 71,
           height: 95,
 
-
-
      });
 
      var red_btn_on = new Konva.Image ({
@@ -57,9 +55,6 @@ function addBlueRedButton (stage, layer, params) {
      });
 
 
-
-
-
     group.add(blue_btn_off);
     group.add(blue_btn_on);
     group.add(red_btn_on);
@@ -67,8 +62,9 @@ function addBlueRedButton (stage, layer, params) {
     blue_btn_on.hide();
     red_btn_on.hide();
 
-red_btn_off.on('mousedown', function(){
 
+red_btn_off.on('mousedown', function(){
+params.start();
 blue_btn_off.hide();
 blue_btn_on.show();
 red_btn_on.show();
@@ -80,7 +76,7 @@ layer.draw();
 
 
 red_btn_on.on('mousedown', function(){
-
+params.stop();
 blue_btn_on.hide();
 blue_btn_off.show();
 red_btn_on.hide();
@@ -88,8 +84,6 @@ red_btn_off.show();
 layer.draw();
 
 })
-
-
 
 stage.add(group);
 

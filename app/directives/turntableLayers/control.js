@@ -40,10 +40,10 @@ function addControlLayer(stage, layer, params) {
 
     stage.add(controlGroup);
 
-
+/*
 control.addEventListener ('mousedown', function (){
 
-  /*  control = true;*/
+   control = true;
 
 })
 
@@ -54,34 +54,38 @@ control.addEventListener ('mousedown', function (){
               angle_max = 90*(Math.PI/180);
 
                    if (angle <=angle_max ) {
-                   angle+= 1;
+                   angle+= 15*(Math.PI/180);
                    control.rotate((angle*(Math.PI/180))*speed);
               }
               else if(angle >= angle_max) {
-                   angle-= 1;
+                   angle-= 15*(Math.PI/180);
                    control.rotate((angle*(Math.PI/180))*speed);
 
             }
             layer.batchDraw();
   });
+*/
 
-  control.addEventListener('mouseup', function(){
+  control.addEventListener('mouesedown', function(){
 
-  /*  control = getCurrentPosition();*/
+    alert("hello");
 
-  })
+
+  });
+
+
 /*
-                control.on('mousemove', function(evt) {
-                    var controlled = true
-                     mousePos = stage.getPointerPosition();
-                    if(controlled) {
-                        var x = mouseoPos.X - stage.GetX();
-                        var y = mousePos.Y - stage.GetY();
-                        var angle = Math.atan(y / x);
+          control.on('mousemove', function(evt) {
+          var controlled = true
+           mousePos = stage.getPointerPosition();
+              if(controlled) {
+                var x = mouseoPos.X - stage.GetX();
+                var y = mousePos.Y - stage.GetY();
+                var angle = Math.atan(y / x);
 
 
-                        var rotation = x >= 0 ? angle : angle + Math.PI;
-                       control.rotate(rotation - (control.getAngle() / 2));
+               var rotation = x >= 0 ? angle : angle + Math.PI;
+               control.rotate(rotation - (control.getAngle() / 2));
 
                     }
                 }, false);
