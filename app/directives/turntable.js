@@ -2,19 +2,27 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
     function link(scope, element, attrs) {
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
-            width: 478,
+            width: 526,
             height: 520
         });
 
         loadedImages.loadImages().then(function (images) {
             addTurntable(stage, images);
-          /*  addWaveControl(stage, images)*/
+            addWaveControl(stage, images)
         });
 
         function addTurntable(stage, images) {
-            addBackgroundLayer(stage, images.background);
 
             var turntableLayer = new Konva.Layer();
+
+            var backgroundGroup = new Konva.Group({
+                x: 19,
+                y: 0
+            });
+
+            backgroundGroup.add(addBackgroundLayer(backgroundGroup, images.background));
+
+
 
             var turntableGroup = new Konva.Group({
                 x: 22,
@@ -110,14 +118,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
 
 
-            addSoundWaveSlider (turntableGroup, turntableLayer, {
 
-                sound_wave: images.sound_Wave,
-                sound_wave_control: images.sound_Wave_Control,
-                sound_wave_cont_btn: images.sound_Wave_Cont_Btn
-
-
-            });
 
 
 
@@ -130,55 +131,34 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             });
 */
 
-            turntableLayer.add(turntableGroup);
+            backgroundGroup.add(turntableGroup);
+            turntableLayer.add(backgroundGroup);
             stage.add(turntableLayer);
         }
 
-        /*function addWaveControl(stage, images) {
+
+
+        function addWaveControl(stage, images) {
             var waveControlLayer = new Konva.Layer();
 
             var group = new Konva.Group({
-                x: 95,
-                y: 450
-            });
-
-            var waveImage = new Konva.Image({
-               x: 0,
-                y: 0,
-                image: images.soundWave,
-                width: 502,
-                height: 62
-            });
-
-            var waveImageControl = new Konva.Image({
                 x: 0,
-                y: 75,
-                image: images.soundWaveControl,
-                width: 502,
-                height: 7
+                y: 385
             });
 
-       var waveImageControlBtn = new Konva.Image({
-                x: 7,
-                y: 79,
-                image: images.soundWaveControlBtn,
-                width: 29,
-                height: 29,
-                offset: {
-                    x: 15,
-                    y: 15
-                }
-            });
+            addSoundWaveSlider (group, waveControlLayer, {
 
-            group.add(waveImage);
-            group.add(waveImageControl);
-            group.add(waveImageControlBtn);
+                sound_wave: images.sound_Wave,
+                sound_wave_control: images.sound_Wave_Control,
+                sound_wave_cont_btn: images.sound_Wave_Cont_Btn
+
+
+            });
 
             waveControlLayer.add(group);
             stage.add(waveControlLayer);
 
       }
-      */
     }
 
 

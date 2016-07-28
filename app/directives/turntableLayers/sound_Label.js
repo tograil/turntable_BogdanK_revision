@@ -1,42 +1,45 @@
 function addSoundWaveSlider(stage, layer, params) {
 
-/*  var soundWaveSlider = new Konva.Layer();*/
-
    var group = new Konva.Group({
 
-        x: 53,
-        y: 29
+        x: 0,
+        y: 0
 
    });
 
   var rect = new Konva.Rect ({
 
-    x: -48,
-    y: 330,
+    x: 0,
+    y: 0,
 
-    width: 434,
-    height: 80,
+    width: 526,
+    height: 100,
     fill: ('rgba(61, 60, 55, 0.95)'),
 
   });
 
    var soundWaveEqulizer = new Konva.Image ({
 
-        x: -36,
-        y: 340,
+        x: 12,
+        y: 10,
         image: params.sound_wave,
-        width: 410,
-        height: 30
+        width: 502,
+        height: 62
 
    });
 
     var soundWaveControl = new Konva.Image({
 
-        x: -40,
-        y: 385,
+        x: 12,
+        y: 80,
         image: params.sound_wave_control,
-        width: 415,
+        width: 502,
         height: 8,
+        offset: {
+            x: 0,
+            y: 4
+        }
+
 
     });
 
@@ -44,17 +47,17 @@ function addSoundWaveSlider(stage, layer, params) {
 
     var soundWaveButton = new Konva.Image({
 
-      x: -44,
-      y: 378,
+      x: 13,
+      y: 80,
 
       image: params.sound_wave_cont_btn,
 
-      width: 20,
-      height: 20,
+      width: 29,
+      height: 29,
 
       offset: {
-        x:0,
-        y:0
+        x:14.5,
+        y:14.5
 
       },
 
@@ -85,9 +88,6 @@ function addSoundWaveSlider(stage, layer, params) {
     group.add(soundWaveEqulizer);
 
     stage.add(group);
-/*
-    soundWaveSlider.add(group);
-    stage.add(soundWaveSlider);
-*/
+
 
 }

@@ -1,5 +1,7 @@
-function addBackgroundLayer(stage, image) {
-    var backgroundLayer = new Konva.Layer();
+function addBackgroundLayer(layer, image) {
+
+
+
     var background = new Konva.Image({
         x: 0,
         y: 0,
@@ -8,6 +10,8 @@ function addBackgroundLayer(stage, image) {
         height: 402
     });
 
-    backgroundLayer.add(background);
-    stage.add(backgroundLayer);
+
+    layer.add(background);
+
+    return background;
 }
