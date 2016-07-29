@@ -175,7 +175,11 @@ control.addEventListener ('mousedown', function (){
 
         theta *= 180 / Math.PI;
 
-        return theta - 90;
+        theta -= 90;
+
+        theta = Math.round(theta);
+
+        return theta;
 
     }
 
@@ -184,11 +188,11 @@ control.addEventListener ('mousedown', function (){
 
 
     function checkAngle(angle) {
-        //if(isNaN(angle))
-         //   return false;
+        if(isNaN(angle))
+            return false;
 
-        //if(angle > topAngle || angle < 0)
-          //  return false;
+        if(angle > topAngle || angle < 0)
+           return false;
 
         return true;
     }
@@ -200,21 +204,21 @@ control.addEventListener ('mousedown', function (){
     }, layer);
 
     var mousePressed = false;
-    anim.start();
 
-    controlImageLowLeft.addEventListener('mousedown', function(){
+
+    controlImageLowLeft.on('mousedown.konva', function(){
         mousePressed = true;
-
+        anim.start();
   });
 
-    controlImageLowLeft.addEventListener('mouseup', function(){
+    stage.on('mouseup.konva', function(){
 
         mousePressed =  false;
-        //anim.stop();
+        anim.stop();
     });
 
 
-    controlImageLowLeft.addEventListener('mousemove', function(){
+    stage.on('mousemove.konva', function(){
 
        if(mousePressed)
        {

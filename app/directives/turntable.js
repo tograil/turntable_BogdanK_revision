@@ -70,23 +70,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 */
-            var control = addControlLayer(stage, turntableGroup, turntableLayer, {
 
-              control_high_part: images.control_high_part,
-              control_mid_part: images.control_mid_part,
-              control_smallest_part: images.control_smallest_part,
-              control_low_part_left: images.control_low_part_left,
-                controlSmallPart: images.controlSmallPart,
-
-                start: function () {
-                    disc.start();
-                },
-                stop: function () {
-                    disc.stop();
-                }
-
-
-            });
 
             var play = addOnOffLayer(turntableGroup, turntableLayer, {
 
@@ -94,8 +78,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 on: images.playOn,
                 off: images.playOff,
 
-                start: control.start,
-                stop: control.stop,
+
 
                 blue_Button_On: images.blueButtonOn,
                 blue_Button_Off: images.blueButtonOff,
@@ -110,14 +93,29 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
                 on: images.powerOn,
                 off: images.powerOff,
-                start: control.start,
-                stop: control.stop
+
 
             });
 
 
 
+            var control = addControlLayer(stage, turntableGroup, turntableLayer, {
 
+                control_high_part: images.control_high_part,
+                control_mid_part: images.control_mid_part,
+                control_smallest_part: images.control_smallest_part,
+                control_low_part_left: images.control_low_part_left,
+                controlSmallPart: images.controlSmallPart,
+
+                start: function () {
+                    disc.start();
+                },
+                stop: function () {
+                    disc.stop();
+                }
+
+
+            });
 
 
 
