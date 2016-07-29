@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="turntable.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="turntable.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/directives/turntable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="101" column="82" selection-start-line="101" selection-start-column="82" selection-end-line="101" selection-end-column="82" />
+            <state relative-caret-position="280">
+              <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="onoff.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/onoff.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1360">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="control.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="control.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/control.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="230" column="60" selection-start-line="230" selection-start-column="60" selection-end-line="230" selection-end-column="60" />
+            <state relative-caret-position="8">
+              <caret line="266" column="27" selection-start-line="266" selection-start-column="27" selection-end-line="266" selection-end-column="27" />
               <folding>
                 <element signature="e#1610#2725#0" expanded="false" />
               </folding>
@@ -104,8 +114,8 @@
         <option value="$PROJECT_DIR$/app/turntable.js" />
         <option value="$PROJECT_DIR$/app/directives/turntableLayers/sound_Label.js" />
         <option value="$PROJECT_DIR$/app/directives/turntableLayers/background.js" />
-        <option value="$PROJECT_DIR$/app/directives/turntable.js" />
         <option value="$PROJECT_DIR$/app/directives/turntableLayers/control.js" />
+        <option value="$PROJECT_DIR$/app/directives/turntable.js" />
       </list>
     </option>
   </component>
@@ -308,12 +318,12 @@
       <workItem from="1468050723531" duration="35042000" />
       <workItem from="1469736362637" duration="5375000" />
       <workItem from="1469742696272" duration="3244000" />
-      <workItem from="1469747343430" duration="9152000" />
+      <workItem from="1469747343430" duration="11411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62333000" />
+    <option name="totallyTimeSpent" value="64592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1932" height="1047" extended-state="0" />
@@ -526,13 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/onoff.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/machine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -605,6 +608,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/onoff.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/control.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="266" column="27" selection-start-line="266" selection-start-column="27" selection-end-line="266" selection-end-column="27" />
+          <folding>
+            <element signature="e#1610#2725#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/disc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -615,19 +636,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/turntable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="101" column="82" selection-start-line="101" selection-start-column="82" selection-end-line="101" selection-end-column="82" />
+        <state relative-caret-position="280">
+          <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/directives/turntableLayers/control.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="230" column="60" selection-start-line="230" selection-start-column="60" selection-end-line="230" selection-end-column="60" />
-          <folding>
-            <element signature="e#1610#2725#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

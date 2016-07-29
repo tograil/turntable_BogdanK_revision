@@ -53,32 +53,14 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
           }, disc);
 
-          /*  var blueRed_Button = addBlueRedButton(turntableGroup, turntableLayer,{
-
-                /* blue_Button_On: images.blueButtonOn,
-                 blue_Button_Off: images.blueButtonOff,
-                 red_Button_On: images.redButtonOn,
-                 red_Button_Off: images.redButtonOff,
-
-                 start: function () {
-                     disc.start();
-                 },
-                 stop: function () {
-                     disc.stop();
-                 }
-
-
-            });
-*/
-
 
             var play = addOnOffLayer(turntableGroup, turntableLayer, {
 
 
                 on: images.playOn,
                 off: images.playOff,
-
-
+                start: start,
+                stop: stop,
 
                 blue_Button_On: images.blueButtonOn,
                 blue_Button_Off: images.blueButtonOff,
@@ -118,6 +100,16 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             });
 
 
+            
+            function start() {
+                control.moveToStart();
+                disc.start();
+            }
+            
+            function stop() {
+                control.stop();
+                disc.stop();
+            }
 
 
           /*  addRedButton(turntableGroup, turntableLayer, {

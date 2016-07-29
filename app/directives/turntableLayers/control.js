@@ -199,6 +199,15 @@ control.addEventListener ('mousedown', function (){
 
     var anim = new Konva.Animation(function(frame) {
 
+
+        if(moveToStartFlag) {
+
+            controlGroup.rotation(currentAngle);
+            anim.stop();
+            moveToStartFlag = false;
+
+        }
+
         controlGroup.rotation(currentAngle);
 
     }, layer);
@@ -242,25 +251,53 @@ control.addEventListener ('mousedown', function (){
        }
     });
 
+    var moveToStartFlag = false;
 
-
-
-    function controlStart() {
-        rollStarted = true;
-        animOne.start();
-        params.start();
+    function moveToStart() {
+        if(currentAngle == 0 && !moveToStartFlag)
+        {
+            currentAngle = 22;
+            moveToStartFlag = true;
+            anim.start();
+            //currentAngle = 25;
+        }
     }
 
-    function controlStop() {
-        rollStarted = false;
-        animTwo.start();
-        params.stop();
+
+    function moveToStop() {
+        if(currentAngle != 0 && !moveToStartFlag)
+        {
+            currentAngle = 0;
+            moveToStartFlag = true;
+            anim.start();
+            //currentAngle = 25;
+        }
+    }
+
+    var positionPercentage = 0;
+
+    function setPosition(percentage)
+    {
+        var coef = percentage/100;
+
+        var angle = 22 + (50-22)*coef;
+
+        if(!moveToStartFlag)
+        {
+            currentAngle = angle;
+            anim.start();
+        }
+    }
+
+    function getPosition() {
+        return positionPercentage;
     }
 
     return {
-        start: controlStart,
-        stop: controlStop
-
+        moveToStart: moveToStart,
+        stop: moveToStop,
+        setPotition: setPosition,
+        getPosition: getPosition
       }
   }
 
