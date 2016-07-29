@@ -52,23 +52,31 @@ function addOnOffLayer(stage, layer, params) {
 
      var red_btn_off = new Konva.Image ({
 
-          x: 0,
-          y: -52,
+          x: 16,
+          y: -5,
           image: params.red_Button_Off,
           width: 71,
           height: 95,
+          offset: {
+              x: 16,
+              y: 59
+          }
 
      });
 
      var red_btn_on = new Konva.Image ({
 
-      x: 0,
-      y: -52,
+         x: 16,
+         y: -5,
       image: params.red_Button_On,
 
       width: 71,
       height: 95,
-      visible: false
+      visible: false,
+         offset: {
+             x: 16,
+             y: 59
+         }
 
      });
 
@@ -81,48 +89,62 @@ function addOnOffLayer(stage, layer, params) {
 
     on.hide();
 
+    var powered = false;
+    var started = false;
+
     off.on('mousedown', function () {
 
-        params.start();
         off.hide();
         on.show();
-        blue_btn_on.show();
-        blue_btn_off.hide();
-        red_btn_on.show();
-        red_btn_off.hide();
         layer.draw();
+        started = true;
+
+        if(powered)
+        {
+            params.start();
+        }
+
+
 
     });
 
     on.on('mousedown', function () {
-        params.stop();
+
         off.show();
         on.hide();
-        blue_btn_on.hide();
-        blue_btn_off.show();
-        red_btn_on.hide();
-        red_btn_off.show();
+        layer.draw();
+        started = false;
+
+        if(powered) {
+            params.stop();
+        }
+    });
+
+    var angularSpeed = 45;
+
+
+    red_btn_off.rotation(-45);
+
+    red_btn_off.on('mousedown', function(){
+        if(started)
+            params.start();
+        red_btn_on.show();
+        red_btn_off.hide();
+        blue_btn_on.show();
+        blue_btn_off.hide();
+        powered = true;
         layer.draw();
     });
 
-    red_btn_off.on('mousedown', function(){
-
-    params.start()
-    red_btn_on.show();
-    red_btn_off.hide();
-    blue_btn_on.show();
-    blue_btn_off.hide();
-
-    });
-
    red_btn_on.on('mousedown', function(){
-
-     params.stop();
-     red_btn_on.hide();
-     red_btn_off.show();
-     blue_btn_on.hide();
-     blue_btn_off.show();
-
+       if(started)
+            params.stop();
+       red_btn_on.hide();
+       red_btn_off.show();
+       blue_btn_on.hide();
+       blue_btn_off.show();
+       powered = false;
+       layer.draw();
     });
 
     stage.add(group);

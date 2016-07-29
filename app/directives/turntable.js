@@ -57,7 +57,8 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 off: images.playOff,
                 start: start,
                 stop: stop,
-
+                powerOn: powerOn,
+                powerOff: powerOff,
                 blue_Button_On: images.blueButtonOn,
                 blue_Button_Off: images.blueButtonOff,
                 red_Button_On: images.redButtonOn,
@@ -67,16 +68,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             });
 
-            var power = addPowerLayer(turntableGroup, turntableLayer, {
-
-                on: images.powerOn,
-                off: images.powerOff,
-                power: power
-
-
-            });
-
-            var spSlider = addSpeedSlider(stage, turntableGroup, turntableLayer, {
+             var spSlider = addSpeedSlider(stage, turntableGroup, turntableLayer, {
 
                 speedButton: images.speedSliderButton,
                 speedBase: images.speedSlider,
@@ -106,6 +98,15 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             var powered = true;
             var started = false;
 
+            function powerOn() {
+                power(true);
+            }
+
+
+            function powerOff() {
+                power(false);
+            }
+
             function power(param) {
                 powered = param;
 
@@ -119,7 +120,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 }
             }
 
-            
+
             function start() {
                 started = true;
 
