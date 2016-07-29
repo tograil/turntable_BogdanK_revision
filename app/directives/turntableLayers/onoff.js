@@ -111,7 +111,7 @@ function addOnOffLayer(stage, layer, params) {
     red_btn_on.show();
     red_btn_off.hide();
     blue_btn_on.show();
-    blue.btn_off.hide();
+    blue_btn_off.hide();
 
     });
 

@@ -20,7 +20,7 @@ function addDiscLayer(stage, layer, image, spSlider){
     stage.add(group);
 
     // one revolution per 4 seconds
-    var angularSpeed = -90;
+    var angularSpeed = 45;
     var anim = new Konva.Animation(function(frame) {
         var angleDiff = frame.timeDiff * angularSpeed / 1000;
         disc.rotate(angleDiff);

@@ -31,7 +31,7 @@ function addPowerLayer(stage, layer, params) {
     on.hide();
 
     off.on('mousedown', function () {
-        //params.start();
+        params.power(false);
         off.hide();
         on.show();
         layer.draw();
@@ -39,10 +39,12 @@ function addPowerLayer(stage, layer, params) {
 
     on.on('mousedown', function () {
         //params.stop();
+        params.power(true);
         off.show();
         on.hide();
         layer.draw();
     });
 
     stage.add(group);
+
 }

@@ -34,12 +34,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
           var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk, spSlider);
 
 
-          var spSlider = addSpeedSlider(turntableGroup, turntableLayer, {
 
-                speedButton: images.speedSliderButton,
-                speedBase: images.speedSlider
-
-          }, disc);
 
 
 
@@ -49,6 +44,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
               off33: images.speed33Off,
               on45: images.speed45On,
               off45: images.speed45Off,
+              changeSpeed: updateSpeed
 
 
           }, disc);
@@ -75,11 +71,18 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
                 on: images.powerOn,
                 off: images.powerOff,
+                power: power
 
 
             });
 
+            var spSlider = addSpeedSlider(stage, turntableGroup, turntableLayer, {
 
+                speedButton: images.speedSliderButton,
+                speedBase: images.speedSlider,
+                updateSpeed: updateSpeedSlider
+
+            }, disc);
 
             var control = addControlLayer(stage, turntableGroup, turntableLayer, {
 
@@ -100,15 +103,58 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             });
 
 
+            var powered = true;
+            var started = false;
+
+            function power(param) {
+                powered = param;
+
+                if(powered && started)
+                {
+                    start();
+                }
+                else
+                {
+                    stop()
+                }
+            }
+
             
             function start() {
-                control.moveToStart();
-                disc.start();
+                started = true;
+
+                if(powered) {
+                    control.moveToStart();
+                    disc.start();
+                }
             }
             
             function stop() {
+
+                if(powered)
+                    started = false;
+
                 control.stop();
                 disc.stop();
+            }
+
+
+
+            var percentageC = 0;
+            var fixedSpeedC = 45;
+            
+            function updateSpeed(fixedSpeed) {
+                disc.changeSpeed(fixedSpeed + fixedSpeed * percentageC);
+
+                fixedSpeedC = fixedSpeed;
+
+            }
+
+            function updateSpeedSlider(percentage) {
+                disc.changeSpeed(fixedSpeedC + fixedSpeedC * percentage);
+
+                percentageC = percentage;
+
             }
 
 

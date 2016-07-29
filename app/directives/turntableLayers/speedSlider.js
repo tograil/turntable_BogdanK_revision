@@ -1,6 +1,6 @@
-function addSpeedSlider(stage, layer, params, disc) {
+function addSpeedSlider(stage, baseGroup, layer, params, disc) {
    var group = new Konva.Group({
-            x: 383,
+            x: 373,
             y: 164
         });
 
@@ -12,32 +12,53 @@ function addSpeedSlider(stage, layer, params, disc) {
         height: 154
     });
 
+    var yoffset = 15;
+
+    var minVal = group.attrs.y + 18 + yoffset;
+    var maxVal = group.attrs.y + speedSliderBase.attrs.height - 12 + yoffset;
+
+    var speedPercentage = 0;
+
     var speedSliderButton = new Konva.Image({
 
         x: 29,
-        y: 52,
+        y: 77,
         image: params.speedButton,
         width: 31,
         height: 32,
 
         offset: {
             x: 15,
-            y: 15
+            y: yoffset
         },
 
         draggable: true,
 
 
+
+
         dragBoundFunc: function (pos) {
 
-            var ypos = pos.y;
+            ypos = pos.y;
 
-            if(ypos <= 200)
-                ypos = 200;
-                /*angularSpeed = -90;*/
-            if(ypos >= 320)
-                ypos = 320;
-                /*angularSpeed = 90;*/
+            if(ypos <= minVal)
+                ypos = minVal;
+
+            if(ypos >= maxVal)
+                ypos = maxVal;
+
+
+            var pos = ypos - minVal;
+            var size = maxVal - minVal;
+
+            var perc = pos/size * 100;
+
+            perc -= 50;
+
+            speedPercentage = perc;
+
+            if(params.updateSpeed)
+                params.updateSpeed((-perc)/100);
 
             return {
                 y: ypos,
@@ -76,5 +97,9 @@ speedSliderButton.on('mousemove', function(){
 
     /*var pressed = false;*/
 
-    stage.add(group);
+    baseGroup.add(group);
+
+    return {
+        speedPercentage: speedPercentage
+    }
 }

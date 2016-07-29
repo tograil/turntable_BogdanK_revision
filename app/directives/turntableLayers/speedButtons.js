@@ -7,7 +7,7 @@ var group = new Konva.Group({
 });
 
 var off33 = new Konva.Image({
-    x: 48,
+    x: 51,
     y: 29,
     image: params.off33,
     width: 30,
@@ -17,7 +17,7 @@ var off33 = new Konva.Image({
 });
 
 var on33 = new Konva.Image({
-    x: 48,
+    x: 51,
     y: 29,
     image: params.on33,
     width: 30,
@@ -49,8 +49,10 @@ group.add(off33);
 group.add(on45);
 group.add(off45);
 
-on33.hide();
-off45.hide();
+on33.show();
+    off33.hide()
+off45.show();
+    on45.hide();
 
 off45.on('mousedown', function () {
 
@@ -60,7 +62,9 @@ off45.on('mousedown', function () {
     off33.show();
     on45.show();
     layer.draw();
-    disc.changeSpeed(60);
+    fixedSpeed = 75;
+    params.changeSpeed(fixedSpeed);
+
 
 });
 
@@ -71,17 +75,18 @@ off33.on('mousedown', function () {
     on33.show();
     off45.show();
     layer.draw();
-    disc.changeSpeed(30);
+    fixedSpeed = 45;
+    params.changeSpeed(fixedSpeed);
 });
 
-on45.on('mousedown', function(){
 
-disc.changeSpeed(90);
-
-})
-
+var fixedSpeed = 45;
 
 
 stage.add(group);
+
+    return {
+        currentSpeed: fixedSpeed
+    }
 
 }
