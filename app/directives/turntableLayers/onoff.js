@@ -134,6 +134,8 @@ function addOnOffLayer(stage, layer, params) {
         blue_btn_off.hide();
         powered = true;
         layer.draw();
+
+        
     });
 
    red_btn_on.on('mousedown', function(){

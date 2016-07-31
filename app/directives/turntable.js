@@ -33,11 +33,6 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
           var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk, spSlider);
 
-
-
-
-
-
         var speedButtons = add3345Layer(turntableGroup, turntableLayer, {
 
               on33: images.speed33On,
@@ -129,7 +124,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                     disc.start();
                 }
             }
-            
+
             function stop() {
 
                 if(powered)
@@ -143,7 +138,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
             var percentageC = 0;
             var fixedSpeedC = 45;
-            
+
             function updateSpeed(fixedSpeed) {
                 disc.changeSpeed(fixedSpeed + fixedSpeed * percentageC);
 

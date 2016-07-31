@@ -18,8 +18,8 @@ musicPlayer.controller('MainCtrl', ['$scope',
 
           sound_Cloud.get('tracks', function(tracks){
 
-                var i,
-                for (i = 0, i < tracks.length, i++){
+
+                for (var i = 0; i < tracks.length; i++){
 
                   sound_cloud.stream('/tracks/' + tracks[i].id, function (sm_object){
 
@@ -28,7 +28,8 @@ musicPlayer.controller('MainCtrl', ['$scope',
                      id: track[i].id,
                      title: track[i].id,
                      url:  sm_object.url,
-    
+                     volume: 50
+
 
                    };
 
@@ -41,11 +42,11 @@ musicPlayer.controller('MainCtrl', ['$scope',
                      });
                   };
               });
-          };
+          },
 
     ]);
 
-]);
+
 
 
 app.value('imagePath', 'app/img/');
