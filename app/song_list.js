@@ -1,7 +1,4 @@
-var songList = angular.module('s_list',[]);
-
-
-    .controller('songs_list',['$scope', function ($scope) {
+app.controller('tt',['$scope', function ($scope) {
 
        $scope.songs = [];
        sound_cloud.initalize({
@@ -38,6 +35,13 @@ var songList = angular.module('s_list',[]);
       };
 
 ]);
+
+
+app.service ('', function (){
+
+
+
+})
 
 /*
 .controller('MainCtrl', ['$scope', function ($scope) {

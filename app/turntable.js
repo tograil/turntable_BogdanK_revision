@@ -1,5 +1,52 @@
 var app = angular.module('tt', []);
 
+var musicPlayer = angular.module('tt',['angularSoundManager']);
+
+musicPlayer.controller('MainCtrl', ['$scope',
+
+
+         function($scope) {
+
+
+
+           $scope.songs = [];
+           sound_cloud.initalize({
+
+            client_id: 'YOUR ID'
+
+           });
+
+          sound_Cloud.get('tracks', function(tracks){
+
+                var i,
+                for (i = 0, i < tracks.length, i++){
+
+                  sound_cloud.stream('/tracks/' + tracks[i].id, function (sm_object){
+
+                   var track = {
+
+                     id: track[i].id,
+                     title: track[i].id,
+                     url:  sm_object.url,
+    
+
+                   };
+
+                  $scope.$apply(function(){
+
+                       $scope.songs.push(track);
+
+                       });
+
+                     });
+                  };
+              });
+          };
+
+    ]);
+
+]);
+
 
 app.value('imagePath', 'app/img/');
 
