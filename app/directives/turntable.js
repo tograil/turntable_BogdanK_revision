@@ -1,4 +1,4 @@
-app.directive("turntable", [ 'loadedImages', function(loadedImages){
+app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, ngAudio){
     function link(scope, element, attrs) {
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
@@ -6,9 +6,11 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
             height: 520
         });
 
+        var sound = ngAudio.load("/turntable_new/mp3examples/BackinBlack.mp3");
+
         loadedImages.loadImages().then(function (images) {
             addTurntable(stage, images);
-            addWaveControl(stage, images)
+            addWaveControl(stage, images);
         });
 
         function addTurntable(stage, images) {
@@ -19,35 +21,27 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 x: 19,
                 y: 0
             });
-
             backgroundGroup.add(addBackgroundLayer(backgroundGroup, images.background));
 
 
 
-            var turntableGroup = new Konva.Group({
-                x: 22,
-                y: 17
-            });
+        var turntableGroup = new Konva.Group({
+            x: 22,
+            y: 17
+        });
 
-            /*addMachineLayer(turntableGroup, images.machine);*/
-
-          var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk, spSlider);
+        var disc = addDiscLayer(turntableGroup, turntableLayer, images.disk, spSlider);
 
         var speedButtons = add3345Layer(turntableGroup, turntableLayer, {
-
               on33: images.speed33On,
               off33: images.speed33Off,
               on45: images.speed45On,
               off45: images.speed45Off,
               changeSpeed: updateSpeed
-
-
           }, disc);
 
 
             var play = addOnOffLayer(turntableGroup, turntableLayer, {
-
-
                 on: images.playOn,
                 off: images.playOff,
                 start: start,
@@ -122,6 +116,11 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 if(powered) {
                     control.moveToStart();
                     disc.start();
+
+                    sound = ngAudio.load("/turntable_new/mp3examples/BackinBlack.mp3");
+
+                    sound.play();
+
                 }
             }
 
@@ -132,6 +131,7 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
 
                 control.stop();
                 disc.stop();
+                sound.stop();
             }
 
 
@@ -152,16 +152,6 @@ app.directive("turntable", [ 'loadedImages', function(loadedImages){
                 percentageC = percentage;
 
             }
-
-
-          /*  addRedButton(turntableGroup, turntableLayer, {
-
-                red_Button_On: images.redButtonOn,
-                red_Button_Off: images.redButtonOff
-
-
-            });
-*/
 
             backgroundGroup.add(turntableGroup);
             turntableLayer.add(backgroundGroup);
