@@ -67,11 +67,11 @@ function addSoundWaveSlider(stage, layer, params) {
 
            var xpos = pos.x;
 
-           if (xpos <= 26)
-                xpos = 26;
+               if (xpos <= 14)
+                xpos = 14;
 
-           if (xpos >= 430)
-                xpos = 430;
+           if (xpos >= 504)
+                xpos = 504;
 
 
            return {
