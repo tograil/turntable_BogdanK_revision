@@ -44,10 +44,19 @@ function addSoundWaveSlider(stage, layer, params) {
     });
 
 
+    var startPos = 14;
+    var sliderLenght = 504;
+    
+    function updatePosition(pos, lenght) {
+        var realPos = pos/lenght * (sliderLenght - startPos);
+        soundWaveButton.x(startPos + realPos);
+        group.draw();
+    }
+
 
     var soundWaveButton = new Konva.Image({
 
-      x: 13,
+      x: startPos,
       y: 80,
 
       image: params.sound_wave_cont_btn,
@@ -67,11 +76,11 @@ function addSoundWaveSlider(stage, layer, params) {
 
            var xpos = pos.x;
 
-               if (xpos <= 14)
-                xpos = 14;
+               if (xpos <= startPos)
+                xpos = startPos;
 
            if (xpos >= 504)
-                xpos = 504;
+                xpos = sliderLenght;
 
 
            return {
@@ -89,5 +98,8 @@ function addSoundWaveSlider(stage, layer, params) {
 
     stage.add(group);
 
+    return {
+        updatePosition: updatePosition
+    }
 
 }

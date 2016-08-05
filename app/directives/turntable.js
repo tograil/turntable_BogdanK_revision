@@ -1,4 +1,4 @@
-app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, ngAudio){
+app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(loadedImages, ngAudio, $interval){
     function link(scope, element, attrs) {
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
@@ -9,11 +9,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
         var sound = ngAudio.load("/turntable_new/mp3examples/BackinBlack.mp3");
 
         loadedImages.loadImages().then(function (images) {
-            addTurntable(stage, images);
-            addWaveControl(stage, images);
+            var control = addWaveControl(stage, images);
+            addTurntable(stage, images, control);
+
         });
 
-        function addTurntable(stage, images) {
+        function addTurntable(stage, images, soundWave) {
 
             var turntableLayer = new Konva.Layer();
 
@@ -109,6 +110,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
                 }
             }
 
+            var timer;
 
             function start() {
                 started = true;
@@ -121,6 +123,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
 
                     sound.play();
 
+                    timer = $interval(function () {
+                        var progress = sound.currentTime;
+                        soundWave.updatePosition(progress, progress + sound.remaining);
+                        control.setPosition(progress * 100 / (progress + sound.remaining));
+                    }, 100);
+
                 }
             }
 
@@ -132,7 +140,10 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
                 control.stop();
                 disc.stop();
                 sound.stop();
+
+                timer = undefined;
             }
+
 
 
 
@@ -156,6 +167,9 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
             backgroundGroup.add(turntableGroup);
             turntableLayer.add(backgroundGroup);
             stage.add(turntableLayer);
+
+            powerOn();
+            start();
         }
 
 
@@ -168,7 +182,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
                 y: 385
             });
 
-            addSoundWaveSlider (group, waveControlLayer, {
+            var slider = addSoundWaveSlider (group, waveControlLayer, {
 
                 sound_wave: images.sound_Wave,
                 sound_wave_control: images.sound_Wave_Control,
@@ -180,7 +194,10 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', function(loadedImages, n
             waveControlLayer.add(group);
             stage.add(waveControlLayer);
 
+            return slider;
+
       }
+
     }
 
 

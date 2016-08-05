@@ -89,20 +89,25 @@ function addOnOffLayer(stage, layer, params) {
 
     on.hide();
 
-    var powered = false;
+    var powered = true;
     var started = false;
 
-    off.on('mousedown', function () {
-
+    function start() {
         off.hide();
         on.show();
         layer.draw();
         started = true;
 
-        if(powered)
-        {
+        if (powered) {
             params.start();
         }
+    }
+
+    off.on('mousedown', function () {
+
+
+
+        start();
 
 
 
@@ -125,8 +130,8 @@ function addOnOffLayer(stage, layer, params) {
 
     red_btn_off.rotation(-45);
 
-    red_btn_off.on('mousedown', function(){
-        if(started)
+    function power() {
+        if (started)
             params.start();
         red_btn_on.show();
         red_btn_off.hide();
@@ -134,6 +139,12 @@ function addOnOffLayer(stage, layer, params) {
         blue_btn_off.hide();
         powered = true;
         layer.draw();
+    }
+
+    red_btn_off.on('mousedown', function(){
+
+
+        power();
 
         
     });
@@ -150,4 +161,7 @@ function addOnOffLayer(stage, layer, params) {
     });
 
     stage.add(group);
+
+    start();
+    power();
 }

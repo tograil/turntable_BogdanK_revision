@@ -226,28 +226,30 @@ control.addEventListener ('mousedown', function (){
         anim.stop();
     });
 
+    function getPositionCoord() {
+        var pos = stage.getPointerPosition();
+        var localPos = {
+            x: pos.x - baseGroup.attrs.x,
+            y: pos.y - baseGroup.attrs.y
+        };
+
+        var angle = calculateAngle(localPos, currentPos);
+
+
+        if (checkAngle(angle)) {
+
+            currentAngle = angle;
+
+            currentPos = localPos;
+
+
+        }
+    }
 
     stage.on('mousemove.konva', function(){
-
-       if(mousePressed)
+        if(mousePressed)
        {
-           var pos = stage.getPointerPosition();
-           var localPos = {
-               x: pos.x - baseGroup.attrs.x,
-               y: pos.y - baseGroup.attrs.y
-           };
-
-           var angle = calculateAngle(localPos, currentPos);
-
-
-           if(checkAngle(angle)) {
-
-               currentAngle = angle;
-
-               currentPos = localPos;
-
-
-           }
+           getPositionCoord();
        }
     });
 
@@ -296,7 +298,7 @@ control.addEventListener ('mousedown', function (){
     return {
         moveToStart: moveToStart,
         stop: moveToStop,
-        setPotition: setPosition,
+        setPosition: setPosition,
         getPosition: getPosition
       }
   }
