@@ -6,7 +6,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             height: 520
         });
 
-        var sound = ngAudio.load("/turntable_new/mp3examples/BackinBlack.mp3");
+        var sound = ngAudio.load("http://timbullman.blob.core.windows.net/playing/BackinBlack.mp3");
 
         loadedImages.loadImages().then(function (images) {
             var control = addWaveControl(stage, images);
