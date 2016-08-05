@@ -155,12 +155,20 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
                 fixedSpeedC = fixedSpeed;
 
+                var soundSpeed = fixedSpeed / 45;
+
+                sound.playbackRate = soundSpeed + soundSpeed * percentageC;
+
             }
 
             function updateSpeedSlider(percentage) {
                 disc.changeSpeed(fixedSpeedC + fixedSpeedC * percentage);
 
                 percentageC = percentage;
+
+                var soundSpeed = fixedSpeedC / 45;
+
+                sound.playbackRate = soundSpeed + soundSpeed * percentageC;
 
             }
 
