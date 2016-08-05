@@ -36,8 +36,8 @@
       <file leaf-file-name="turntable.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/directives/turntable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="100" selection-start-line="8" selection-start-column="100" selection-end-line="8" selection-end-column="100" />
+            <state relative-caret-position="578">
+              <caret line="121" column="108" selection-start-line="121" selection-start-column="108" selection-end-line="121" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -373,12 +373,12 @@
       <workItem from="1469999457276" duration="9037000" />
       <workItem from="1470236198725" duration="108000" />
       <workItem from="1470318528011" duration="7722000" />
-      <workItem from="1470333731657" duration="6230000" />
+      <workItem from="1470333731657" duration="6494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101567000" />
+    <option name="totallyTimeSpent" value="101831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
@@ -727,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/turntable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="100" selection-start-line="8" selection-start-column="100" selection-end-line="8" selection-end-column="100" />
+        <state relative-caret-position="578">
+          <caret line="121" column="108" selection-start-line="121" selection-start-column="108" selection-end-line="121" selection-end-column="108" />
           <folding />
         </state>
       </provider>

@@ -119,7 +119,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                     control.moveToStart();
                     disc.start();
 
-                    sound = ngAudio.load("/turntable_new/mp3examples/BackinBlack.mp3");
+                    sound = ngAudio.load("http://timbullman.blob.core.windows.net/playing/BackinBlack.mp3");
 
                     sound.play();
 
